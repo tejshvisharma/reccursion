@@ -18,7 +18,7 @@ using namespace std;
 //         break;
 //     }
 // }
-void bubbleSort(int *arr,int n, bool swapped=true){
+void bubbleSort(int *arr,int n,int swapped = true){
     // base case array already sorted hai :
     if (n==0 || n==1)
     {
@@ -26,11 +26,11 @@ void bubbleSort(int *arr,int n, bool swapped=true){
     }
     if(swapped){
         swapped = false;
-    for (int  j = n-1; j > 0; j--)
+    for (int  j = 0; j < n-1; j++)
         {
-            if (arr[j]<arr[j-1])
+            if (arr[j]>arr[j+1])
             {
-                swap(arr[j],arr[j-1]);
+                swap(arr[j],arr[j+1]);
                 swapped = true;
             }
         }
@@ -38,10 +38,11 @@ void bubbleSort(int *arr,int n, bool swapped=true){
     
     bubbleSort(arr, --n,swapped);
     }
-
-    
-
+    else
+    return;
 }
+
+
 
 int main(){
       array<int,MAX> arr;
